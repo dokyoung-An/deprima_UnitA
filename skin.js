@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.0.8/20017
 // Filename: ???? ??A?.ggsk
-// Generated 2024-02-06T12:16:12
+// Generated 2024-02-06T12:53:43
 
 function pano2vrSkin(player,base) {
 	player.addVariable('vis_roomchoice', 2, false, { ignoreInState: 0  });
@@ -8154,6 +8154,7 @@ function pano2vrSkin(player,base) {
 		}
 		el=me.__41=document.createElement('div');
 		el.ggId="\ubbf8\ub2c8\ub9f5\ubc30\uacbd-\ubaa8\ubc14\uc77c-\ud655\ub300";
+		el.ggDx=0;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_rectangle ";
@@ -8163,11 +8164,11 @@ function pano2vrSkin(player,base) {
 		hs+='border : 0px solid #000000;';
 		hs+='cursor : pointer;';
 		hs+='height : 100%;';
-		hs+='left : 0px;';
+		hs+='left : calc(50% - ((90% + 0px) / 2) + 0px);';
 		hs+='position : absolute;';
 		hs+='top : 0px;';
 		hs+='visibility : inherit;';
-		hs+='width : 100%;';
+		hs+='width : 90%;';
 		hs+='pointer-events:auto;';
 		el.setAttribute('style',hs);
 		el.style.transformOrigin='50% 50%';
@@ -8434,7 +8435,6 @@ function pano2vrSkin(player,base) {
 		el.ggMapNotLoaded = true;
 		el.ggMapId = 'FloorPlan02';
 		el.ggId="Map 2-\ubaa8\ubc14\uc77c-\ud655\ub300";
-		el.ggDx=0;
 		el.ggDy=0;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=false;
@@ -8444,9 +8444,9 @@ function pano2vrSkin(player,base) {
 		hs+='border : 0px solid #000000;';
 		hs+='cursor : default;';
 		hs+='height : 99.3549%;';
-		hs+='left : calc(50% - ((100% + 0px) / 2) + 0px);';
 		hs+='overflow : hidden;';
 		hs+='position : absolute;';
+		hs+='right : 15%;';
 		hs+='top : calc(50% - ((99.3549% + 0px) / 2) + 0%);';
 		hs+='visibility : hidden;';
 		hs+='width : 100%;';
@@ -8536,8 +8536,8 @@ function pano2vrSkin(player,base) {
 		hs+='cursor : pointer;';
 		hs+='height : 20px;';
 		hs+='position : absolute;';
-		hs+='right : 15px;';
-		hs+='top : 15px;';
+		hs+='right : 100px;';
+		hs+='top : 50px;';
 		hs+='visibility : inherit;';
 		hs+='width : 20px;';
 		hs+='pointer-events:auto;';
@@ -8555,12 +8555,38 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._image_2.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getViewerSize().width <= 640))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._image_2.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._image_2.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._image_2.style.transition='right 0s, top 0s';
+				if (me._image_2.ggCurrentLogicStatePosition == 0) {
+					me._image_2.style.right='15px';
+					me._image_2.style.top='15px';
+				}
+				else {
+					me._image_2.style.right='100px';
+					me._image_2.style.top='50px';
+				}
+			}
+		}
+		me._image_2.logicBlock_position();
 		me._image_2.ggUpdatePosition=function (useTransition) {
 		}
 		me.__41.appendChild(me._image_2);
 		me.__38.appendChild(me.__41);
 		el=me.__39=document.createElement('div');
 		el.ggId="\uce35\uc218\ubc30\uacbd-\ud655\ub300";
+		el.ggDx=0;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=true;
 		el.className="ggskin ggskin_rectangle ";
@@ -8569,10 +8595,10 @@ function pano2vrSkin(player,base) {
 		hs+='background : rgba(255,255,255,0.627451);';
 		hs+='border : 0px solid #000000;';
 		hs+='border-radius : 50px;';
-		hs+='bottom : 40px;';
+		hs+='bottom : 20px;';
 		hs+='cursor : pointer;';
 		hs+='height : 35px;';
-		hs+='left : 23px;';
+		hs+='left : calc(50% - ((65px + 0px) / 2) + 0px);';
 		hs+='position : absolute;';
 		hs+='visibility : inherit;';
 		hs+='width : 65px;';
@@ -8591,6 +8617,31 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me.__39.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getViewerSize().width <= 640))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me.__39.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me.__39.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me.__39.style.transition='left 0s, bottom 0s';
+				if (me.__39.ggCurrentLogicStatePosition == 0) {
+					me.__39.style.left = 'calc(50% - (65px / 2))';
+					me.__39.style.bottom='40px';
+				}
+				else {
+					me.__39.style.left='calc(50% - ((65px + 0px) / 2) + 0px)';
+					me.__39.style.bottom='20px';
+				}
+			}
+		}
+		me.__39.logicBlock_position();
 		me.__39.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
@@ -8604,7 +8655,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me.__39.ggCurrentLogicStateVisible != newLogicStateVisible) {
 				me.__39.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me.__39.style.transition='';
+				me.__39.style.transition='left 0s, bottom 0s';
 				if (me.__39.ggCurrentLogicStateVisible == 0) {
 					me.__39.style.visibility="hidden";
 					me.__39.ggVisible=false;
@@ -8834,6 +8885,7 @@ function pano2vrSkin(player,base) {
 		me.__38.appendChild(me.__39);
 		el=me._m=document.createElement('div');
 		el.ggId="\uce35\uc218-\ud655\ub300-m";
+		el.ggDx=0;
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
 		el.ggVisible=false;
 		el.className="ggskin ggskin_rectangle ";
@@ -8842,10 +8894,10 @@ function pano2vrSkin(player,base) {
 		hs+='background : rgba(255,255,255,0.627451);';
 		hs+='border : 0px solid #000000;';
 		hs+='border-radius : 20px;';
-		hs+='bottom : 40px;';
+		hs+='bottom : 20px;';
 		hs+='cursor : pointer;';
 		hs+='height : 80px;';
-		hs+='left : 23px;';
+		hs+='left : calc(50% - ((60px + 0px) / 2) + 0px);';
 		hs+='position : absolute;';
 		hs+='visibility : hidden;';
 		hs+='width : 60px;';
@@ -8864,6 +8916,31 @@ function pano2vrSkin(player,base) {
 			}
 			return player.getCurrentNode();
 		}
+		me._m.logicBlock_position = function() {
+			var newLogicStatePosition;
+			if (
+				((player.getViewerSize().width <= 640))
+			)
+			{
+				newLogicStatePosition = 0;
+			}
+			else {
+				newLogicStatePosition = -1;
+			}
+			if (me._m.ggCurrentLogicStatePosition != newLogicStatePosition) {
+				me._m.ggCurrentLogicStatePosition = newLogicStatePosition;
+				me._m.style.transition='left 0s, bottom 0s';
+				if (me._m.ggCurrentLogicStatePosition == 0) {
+					me._m.style.left = 'calc(50% - (60px / 2))';
+					me._m.style.bottom='40px';
+				}
+				else {
+					me._m.style.left='calc(50% - ((60px + 0px) / 2) + 0px)';
+					me._m.style.bottom='20px';
+				}
+			}
+		}
+		me._m.logicBlock_position();
 		me._m.logicBlock_visible = function() {
 			var newLogicStateVisible;
 			if (
@@ -8877,7 +8954,7 @@ function pano2vrSkin(player,base) {
 			}
 			if (me._m.ggCurrentLogicStateVisible != newLogicStateVisible) {
 				me._m.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me._m.style.transition='';
+				me._m.style.transition='left 0s, bottom 0s';
 				if (me._m.ggCurrentLogicStateVisible == 0) {
 					me._m.style.visibility=(Number(me._m.style.opacity)>0||!me._m.style.opacity)?'inherit':'hidden';
 					me._m.ggVisible=true;
@@ -9761,7 +9838,7 @@ function pano2vrSkin(player,base) {
 		hs+='visibility : inherit;';
 		hs+='width : 100%;';
 		hs+='pointer-events:auto;';
-		hs+='@import url(\"https:\/\/fonts.googleapis.com\/css2?family=Nanum+Gothic:wght@400;700&display=swap\"); font-family: \"Nanum Gothic\", sans-serif; line-height:20px;';
+		hs+='@import url(\"https:\/\/fonts.googleapis.com\/css2?family=Nanum+Gothic:wght@400;700&display=swap\"); font-family: \"Nanum Gothic\", sans-serif; line-height:20px; letter-spacing:-1px;';
 		el.setAttribute('style',hs);
 		el.style.transformOrigin='50% 50%';
 		hs ='';
@@ -15019,9 +15096,12 @@ function pano2vrSkin(player,base) {
 			me._map_2.ggSimpleFloorplanMarkerArray=[];
 		}
 		me._map_2.logicBlock_visible();
+		me._image_2.logicBlock_position();
+		me.__39.logicBlock_position();
 		me.__39.logicBlock_visible();
 		me.__40.logicBlock_text();
 		me._image_6.logicBlock_angle();
+		me._m.logicBlock_position();
 		me._m.logicBlock_visible();
 		if (
 			(
@@ -15592,6 +15672,9 @@ function pano2vrSkin(player,base) {
 			me.__38.logicBlock_size();
 			me.__38.logicBlock_scaling();
 			me.__42.logicBlock_size();
+			me._image_2.logicBlock_position();
+			me.__39.logicBlock_position();
+			me._m.logicBlock_position();
 			me.__18.logicBlock_scaling();
 			me.__10.logicBlock_scaling();
 			me.__11.logicBlock_position();
